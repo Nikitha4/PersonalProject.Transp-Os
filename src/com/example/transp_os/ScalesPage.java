@@ -1,7 +1,5 @@
 package com.example.transp_os;
 
-import org.jfugue.player.Player;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +11,9 @@ public class ScalesPage {
     private JButton minusButton;;
     private JButton playButton;
     private JLabel displayTransposeValue;
+    private JCheckBox reverseCheckBox;
     private int transpose_value;
+    static boolean isReverse;
 
     public static void NewScreen() {
         JFrame frame = new JFrame("Transp-Os");
@@ -39,8 +39,12 @@ public class ScalesPage {
         plusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ++transpose_value;
-                transpose_value = transpose_value % 13;
+                if (transpose_value == 12) {
+                    transpose_value = -12;
+                } else {
+                    ++transpose_value;
+                }
+                //transpose_value = transpose_value % 13;
                 String display = "Current Transpose Value: " + transpose_value;
                 displayTransposeValue.setText(display);
             }
@@ -49,10 +53,20 @@ public class ScalesPage {
         minusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                --transpose_value;
-                transpose_value = transpose_value % 13;
+                if (transpose_value == -12) {
+                    transpose_value = 12;
+                } else {
+                    --transpose_value;
+                }
                 String display = "Current Transpose Value: " + transpose_value;
                 displayTransposeValue.setText(display);
+            }
+        });
+
+        reverseCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isReverse = reverseCheckBox.getModel().isSelected();
             }
         });
     }
