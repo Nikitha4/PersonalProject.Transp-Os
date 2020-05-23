@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class ScalesPage {
     private JPanel Scales;
-    private JButton upButton;
+    private JButton plusButton;
+    private JButton minusButton;;
     private JButton playButton;
-    private JButton downButton;
     private JLabel displayTransposeValue;
     private int transpose_value;
 
@@ -36,7 +36,7 @@ public class ScalesPage {
             }
         });
 
-        upButton.addActionListener(new ActionListener() {
+        plusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ++transpose_value;
@@ -46,7 +46,7 @@ public class ScalesPage {
             }
         });
 
-        downButton.addActionListener(new ActionListener() {
+        minusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 --transpose_value;
