@@ -25,16 +25,11 @@ public class PlayMusic {
         ScalesPage userChoice = new ScalesPage();
         System.out.println(userChoice.isReverse);
         if(userChoice.isReverse) {
-            for (int i = 6; i > 0; i--) {
+            for (int i = 6; i >= 0; i--) {
                 count++;
                 scaleToPlay += (notes[baseScalePositions[i] + current_transpose_value] + " ");
             }
         }
-
-        /*for (int i = 6; i >= 0; i--) {
-            count++;
-            scaleToPlay += (notes[baseScalePositions[i] + current_transpose_value] + " ");
-        }*/
 
         System.out.println(scaleToPlay);
         Player player = new Player();
