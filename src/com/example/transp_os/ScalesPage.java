@@ -20,8 +20,8 @@ public class ScalesPage {
         frame.setContentPane(new ScalesPage().Scales);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dimension = new Dimension();
-        dimension.height = 1000;
-        dimension.width = 1000;
+        dimension.height = 500;
+        dimension.width = 500;
         frame.setMinimumSize(dimension);
         frame.pack();
         frame.setVisible(true);
@@ -40,7 +40,7 @@ public class ScalesPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ++transpose_value;
-                transpose_value = transpose_value % 12;
+                transpose_value = transpose_value % 13;
                 String display = "Current Transpose Value: " + transpose_value;
                 displayTransposeValue.setText(display);
             }
@@ -50,7 +50,7 @@ public class ScalesPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 --transpose_value;
-                transpose_value = transpose_value % 12;
+                transpose_value = transpose_value % 13;
                 String display = "Current Transpose Value: " + transpose_value;
                 displayTransposeValue.setText(display);
             }

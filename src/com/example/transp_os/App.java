@@ -28,8 +28,8 @@ public class App {
         frame.setContentPane(new App().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dimension = new Dimension();
-        dimension.height = 1000;
-        dimension.width = 1000;
+        dimension.height = 500;
+        dimension.width = 500;
         frame.setMinimumSize(dimension);
         frame.pack();
         frame.setVisible(true);
