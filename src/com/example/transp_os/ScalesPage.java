@@ -6,17 +6,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ScalesPage {
+    private static JFrame frame;
     private JPanel Scales;
     private JButton plusButton;
     private JButton minusButton;;
     private JButton playButton;
     private JLabel displayTransposeValue;
     private JCheckBox reverseCheckBox;
+    private JButton backButton;
     private int transpose_value;
     static boolean isReverse;
 
     public static void NewScreen() {
-        JFrame frame = new JFrame("Transp-Os");
+        frame = new JFrame("Transp-Os");
         frame.setContentPane(new ScalesPage().Scales);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dimension = new Dimension();
@@ -67,6 +69,15 @@ public class ScalesPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 isReverse = reverseCheckBox.getModel().isSelected();
+            }
+        });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                App mainScreen = new App();
+                mainScreen.NewScreen();
+                frame.setVisible(false);
             }
         });
     }
