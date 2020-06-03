@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.example.transp_os.TransposePage">
+  <grid id="27dc6" binding="Transpose" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="b204a" class="javax.swing.JComboBox" binding="inputKey">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Cb"/>
+            <item value="Gb"/>
+            <item value="Db"/>
+            <item value="Ab"/>
+            <item value="Eb"/>
+            <item value="Bb"/>
+            <item value="F"/>
+            <item value="C"/>
+            <item value="G"/>
+            <item value="D"/>
+            <item value="A"/>
+            <item value="E"/>
+            <item value="B"/>
+            <item value="F#"/>
+            <item value="C#"/>
+          </model>
+        </properties>
+      </component>
+      <component id="b8c60" class="javax.swing.JLabel" binding="outputNote">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="New Note:"/>
+        </properties>
+      </component>
+      <component id="6152c" class="javax.swing.JComboBox" binding="inputNote">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="C"/>
+            <item value="C#/Db"/>
+            <item value="D"/>
+            <item value="D#/Eb"/>
+            <item value="E"/>
+            <item value="F"/>
+            <item value="F#/Gb"/>
+            <item value="G"/>
+            <item value="G#/Ab"/>
+            <item value="A"/>
+            <item value="A#/Bb"/>
+            <item value="B"/>
+          </model>
+        </properties>
+      </component>
+      <component id="51ab9" class="javax.swing.JComboBox" binding="outputKey">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Cb"/>
+            <item value="Gb"/>
+            <item value="Db"/>
+            <item value="Ab"/>
+            <item value="Eb"/>
+            <item value="Bb"/>
+            <item value="F"/>
+            <item value="C"/>
+            <item value="G"/>
+            <item value="D"/>
+            <item value="A"/>
+            <item value="E"/>
+            <item value="B"/>
+            <item value="F#"/>
+            <item value="C#"/>
+          </model>
+        </properties>
+      </component>
+      <component id="caf8" class="javax.swing.JLabel" binding="instructionOne">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Starting Key:"/>
+        </properties>
+      </component>
+      <component id="8c6ce" class="javax.swing.JLabel" binding="instructionTwo">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Starting Note:"/>
+        </properties>
+      </component>
+      <component id="6d79d" class="javax.swing.JLabel" binding="InstructionThree">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="New Key:"/>
+        </properties>
+      </component>
+      <component id="ba85a" class="javax.swing.JButton" binding="backButton">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Back"/>
+        </properties>
+      </component>
+      <component id="67e84" class="javax.swing.JButton" binding="answerButton">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Transpose!"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

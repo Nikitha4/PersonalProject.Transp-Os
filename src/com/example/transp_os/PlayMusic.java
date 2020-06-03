@@ -34,6 +34,5 @@ public class PlayMusic {
         System.out.println(scaleToPlay);
         Player player = new Player();
         player.play(scaleToPlay);
-
     }
 }

@@ -10,6 +10,7 @@ public class App {
     private JButton scales_button;
     private JPanel panelMain;
     private JButton upload_button;
+    private JButton transpose_button;
     private static JFrame frame;
 
     public App() {
@@ -31,6 +32,16 @@ public class App {
                 frame.setVisible(false);
             }
         });
+
+        transpose_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TransposePage second_screen = new TransposePage();
+                second_screen.NewScreen();
+                frame.setVisible(false);
+            }
+        });
+
     }
 
     public static void main(String[] args) {

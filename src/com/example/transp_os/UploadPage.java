@@ -1,6 +1,5 @@
 package com.example.transp_os;
 
-import org.jfugue.player.ManagedPlayer;
 import org.jfugue.player.Player;
 
 import javax.sound.midi.MidiSystem;
