@@ -1,8 +1,5 @@
 package com.example.transp_os;
 
-
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +11,7 @@ public class TransposeNote {
     private List<String> notes;
 
     public void initialize() {
-        musicalKeys = new HashMap<>();
+        /*musicalKeys = new HashMap<>();
         musicalKeys.put("Cb", -7);
         musicalKeys.put("Gb",-6);
         musicalKeys.put("Db",-5);
@@ -28,47 +25,39 @@ public class TransposeNote {
         musicalKeys.put("A", 3);
         musicalKeys.put("E", 4);
         musicalKeys.put("B", 5);
-        musicalKeys.put("FSharp", 6);
-        musicalKeys.put("CSharp", 7);
+        musicalKeys.put("F#", 6);
+        musicalKeys.put("C#", 7);*/
 
         notes = new ArrayList<>();
-        notes.add("C");
-        notes.add("C#/Db");
-        notes.add("D");
-        notes.add("D#/Eb");
-        notes.add("E");
+        notes.add("Bb");
         notes.add("F");
-        notes.add("F#/Gb");
+        notes.add("C");
         notes.add("G");
-        notes.add("G#/Ab");
+        notes.add("D");
         notes.add("A");
-        notes.add("A#/Bb");
+        notes.add("E");
         notes.add("B");
+        notes.add("F#");
+        notes.add("C#");
+        notes.add("G#");
+        notes.add("D#");
     }
 
-    public String getNote(String startingKey, String newKey, String startingNote) {
+    public String getNote(String startKey, String newKey, String note) {
         initialize();
-        Integer startingValue = musicalKeys.get(startingKey);
-        System.out.println(startingValue);
-
-        Integer newValue = musicalKeys.get(newKey);
-        System.out.println(newValue);
-
+        Integer startingValue = notes.indexOf(startKey);
+        //System.out.println("Starting Key: " + startingValue);
+        Integer newValue = notes.indexOf(newKey);
+        //System.out.println("New key: " + newValue);
         Integer relativeValue = startingValue - newValue;
-        System.out.println(relativeValue);
-
-        Integer startingNotePosition = notes.indexOf(startingNote);
-        System.out.println(startingNotePosition);
-
-        Integer newNotePosition;
-        if (startingNotePosition + relativeValue < 0) {
-            newNotePosition = startingNotePosition + relativeValue + 12;
+        if (startingValue - newValue > 0) {
+            relativeValue = 12 - (startingValue - newValue);
         } else {
-            newNotePosition = startingNotePosition + relativeValue;
+            relativeValue = startingValue - newValue;
         }
+        //System.out.println("Relative value: " + relativeValue);
+        Integer newNoteIndex = notes.indexOf(note) + relativeValue;
 
-        System.out.println(newNotePosition);
-
-        return notes.get(newNotePosition);
+        return notes.get(newNoteIndex);
     }
 }

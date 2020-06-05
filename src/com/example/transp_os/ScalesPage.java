@@ -33,7 +33,7 @@ public class ScalesPage {
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PlayMusic music = new PlayMusic();
+                TranposeScales music = new TranposeScales();
                 music.playScale(transpose_value);
             }
         });
