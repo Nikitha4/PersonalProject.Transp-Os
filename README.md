@@ -9,10 +9,10 @@
 # Transpose Scales Page: 
 ![](images/readme2.png)
 
-# Upload/Play Midi File Page
+# Upload/Play Midi File Page:
 ![](images/readme3.png)
 
-# Transpose Notes Page
+# Transpose Notes Page:
 ![](images/readme4.png)
 
 
