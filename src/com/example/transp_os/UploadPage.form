@@ -24,20 +24,20 @@
           <text value="Upload"/>
         </properties>
       </component>
-      <component id="5f063" class="javax.swing.JLabel" binding="nullMessage">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="no file uploaded"/>
-        </properties>
-      </component>
       <component id="353e8" class="javax.swing.JButton" binding="backButton" default-binding="true">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Back"/>
+        </properties>
+      </component>
+      <component id="d079d" class="javax.swing.JLabel" binding="problemMessage">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="no file uploaded"/>
         </properties>
       </component>
     </children>

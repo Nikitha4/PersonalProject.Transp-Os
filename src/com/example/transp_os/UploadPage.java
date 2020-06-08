@@ -21,7 +21,7 @@ public class UploadPage {
     private JButton backButton;
     private JButton getFileButton;
     private JButton playFileButton;
-    private JLabel nullMessage;
+    private JLabel problemMessage;
     private java.io.File inputFile;
 
     public static void NewScreen() {
@@ -59,7 +59,13 @@ public class UploadPage {
                 // new input text
                 inputFile = of.file;
 
-                nullMessage.setVisible(inputFile == null);
+                if (inputFile == null) {
+                    problemMessage.setText("no file uploaded");
+                } else if (!checkFileValidity(inputFile)) {
+                    problemMessage.setText("invalid file");
+                } else {
+                    problemMessage.setText(inputFile.toString());
+                }
             }
         });
 
@@ -71,11 +77,19 @@ public class UploadPage {
         });
     }
 
+    public boolean checkFileValidity(File file) {
+        System.out.println(file);
+        String fileString = file.toString();
+        String[] fileArray = fileString.split("\\.");
+        System.out.println(fileArray[fileArray.length - 1]);
+        return fileArray[fileArray.length - 1].equals("mid");
+    }
+
     public void PlayFile(File file) {
-        Synthesizer synthesizer = null;
-        javax.sound.midi.Sequencer sequencer = null;
-        InputStream inputStream;
-        if (file != null) {
+        if (file != null && checkFileValidity(file)) {
+            Synthesizer synthesizer = null;
+            javax.sound.midi.Sequencer sequencer = null;
+            InputStream inputStream;
             try {
                 synthesizer = MidiSystem.getSynthesizer();
                 synthesizer.open();
