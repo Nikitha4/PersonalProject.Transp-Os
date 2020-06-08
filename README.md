@@ -1,25 +1,25 @@
-### Transp-Os
+# Transp-Os
 
 **Authors**: Nikitha Nagumalli and Jules Suarez
 
 
-# Home Screen:
+### Home Screen:
 ![](images/readme1.png)
 
-# Transpose Scales Page: 
+### Transpose Scales Page: 
 ![](images/readme2.png)
 
-# Upload/Play Midi File Page:
+### Upload/Play Midi File Page:
 ![](images/readme3.png)
 
-# Transpose Notes Page:
+### Transpose Notes Page:
 ![](images/readme4.png)
 
 
-# Libraries:
+### Libraries:
  - JFugue: https://github.com/dmkoelle/jfugue
  
-# Application:  
+### Application:  
 - Transp-Os has three uses:
   - Transposing and playing musical scales:
     - Program allows users to transpose the C scales up or down an indicated half step value.
