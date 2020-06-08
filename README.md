@@ -1,17 +1,23 @@
-# Transp-Os
+#### Transp-Os
 
 **Authors**: Nikitha Nagumalli and Jules Suarez
 
-### Libraries:
- - JFugue: https://github.com/dmkoelle/jfugue
- 
+
+### Home Screen:
 ![](images/readme1.png)
- 
+
+### Transpose Scales Page: 
 ![](images/readme2.png)
 
+### Upload/Play Midi File Page
 ![](images/readme3.png)
 
+### Transpose Notes Page
 ![](images/readme4.png)
+
+
+### Libraries:
+ - JFugue: https://github.com/dmkoelle/jfugue
  
 ### Application:  
 - Transp-Os has three uses:
