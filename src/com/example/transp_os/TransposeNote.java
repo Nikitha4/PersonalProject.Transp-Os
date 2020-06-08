@@ -45,19 +45,24 @@ public class TransposeNote {
 
     public String getNote(String startKey, String newKey, String note) {
         initialize();
-        Integer startingValue = notes.indexOf(startKey);
-        //System.out.println("Starting Key: " + startingValue);
-        Integer newValue = notes.indexOf(newKey);
-        //System.out.println("New key: " + newValue);
-        Integer relativeValue = startingValue - newValue;
-        if (startingValue - newValue > 0) {
-            relativeValue = 12 - (startingValue - newValue);
-        } else {
-            relativeValue = startingValue - newValue;
-        }
-        //System.out.println("Relative value: " + relativeValue);
-        Integer newNoteIndex = notes.indexOf(note) + relativeValue;
 
+        Integer startingValue = notes.indexOf(startKey);
+        System.out.println("Starting Key: " + startingValue);
+
+        Integer newValue = notes.indexOf(newKey);
+        System.out.println("New key: " + newValue);
+
+        Integer relativeValue = startingValue - newValue;
+        System.out.println("Relative value: " + relativeValue);
+
+        Integer newNoteIndex = notes.indexOf(note) + relativeValue;
+        if (newNoteIndex < 0) {
+            newNoteIndex += 12;
+        } else {
+            newNoteIndex = newNoteIndex % 12;
+        }
+
+        System.out.println("New Note Index: " + newNoteIndex);
         return notes.get(newNoteIndex);
     }
 }
