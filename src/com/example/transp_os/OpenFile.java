@@ -2,7 +2,6 @@ package com.example.transp_os;
 
 import javax.swing.*;
 import java.io.File;
-import java.util.Scanner;
 
 public class OpenFile {
     JFileChooser fileChooser = new JFileChooser();

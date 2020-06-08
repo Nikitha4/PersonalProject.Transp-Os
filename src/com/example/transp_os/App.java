@@ -11,6 +11,7 @@ public class App {
     private JPanel panelMain;
     private JButton upload_button;
     private JButton transpose_button;
+    private JLabel title;
     private static JFrame frame;
 
     public App() {
