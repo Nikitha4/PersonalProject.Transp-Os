@@ -5,6 +5,14 @@
 ### Libraries:
  - JFugue: https://github.com/dmkoelle/jfugue
  
+![](images/readme1.png)
+ 
+![](images/readme2.png)
+
+![](images/readme3.png)
+
+![](images/readme4.png)
+ 
 ### Application:  
 - Transp-Os has three uses:
   - Transposing and playing musical scales:
