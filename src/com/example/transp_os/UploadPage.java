@@ -51,7 +51,7 @@ public class UploadPage {
             public void actionPerformed(ActionEvent e) {
                 OpenFile of = new OpenFile();
                 try {
-                    of.Open();
+                    of.open();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

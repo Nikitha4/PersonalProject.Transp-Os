@@ -1,32 +1,17 @@
 package com.example.transp_os;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * This class transposes one note between different instrument keys
+ */
 public class TransposeNote {
 
-    private Map<String, Integer> musicalKeys;
+    private static final int NUMBER_OF_NOTES = 12;
     private List<String> notes;
 
-    public void initialize() {
-        /*musicalKeys = new HashMap<>();
-        musicalKeys.put("Cb", -7);
-        musicalKeys.put("Gb",-6);
-        musicalKeys.put("Db",-5);
-        musicalKeys.put("Ab",-4);
-        musicalKeys.put("Eb",-3);
-        musicalKeys.put("Bb",-2);
-        musicalKeys.put("F",-1);
-        musicalKeys.put("C",0);
-        musicalKeys.put("G", 1);
-        musicalKeys.put("D", 2);
-        musicalKeys.put("A", 3);
-        musicalKeys.put("E", 4);
-        musicalKeys.put("B", 5);
-        musicalKeys.put("F#", 6);
-        musicalKeys.put("C#", 7);*/
+    private void initialize() {
 
         notes = new ArrayList<>();
         notes.add("Bb");
@@ -41,28 +26,34 @@ public class TransposeNote {
         notes.add("C#");
         notes.add("G#");
         notes.add("D#");
+
     }
 
-    public String getNote(String startKey, String newKey, String note) {
+    /**
+     * transposes startNote from startKey to newKey
+     * @param startKey takes in user's starting key
+     * @param newKey takes in user's new key
+     * @param startNote takes in user's starting note
+     * @return returns a String representing the new transposed note
+     */
+    public String getNote(String startKey, String newKey, String startNote) {
+
         initialize();
-
         Integer startingValue = notes.indexOf(startKey);
-        System.out.println("Starting Key: " + startingValue);
-
         Integer newValue = notes.indexOf(newKey);
-        System.out.println("New key: " + newValue);
 
-        Integer relativeValue = startingValue - newValue;
-        System.out.println("Relative value: " + relativeValue);
+        // relative value is negated to account for shifting between two instrument keys
+        int relativeValue = startingValue - newValue;
 
-        Integer newNoteIndex = notes.indexOf(note) + relativeValue;
+        int newNoteIndex = notes.indexOf(startNote) + relativeValue;
+
+        // makes sure that the newNoteIndex is within the list's range
         if (newNoteIndex < 0) {
-            newNoteIndex += 12;
+            newNoteIndex += NUMBER_OF_NOTES;
         } else {
-            newNoteIndex = newNoteIndex % 12;
+            newNoteIndex = newNoteIndex % NUMBER_OF_NOTES;
         }
 
-        System.out.println("New Note Index: " + newNoteIndex);
         return notes.get(newNoteIndex);
     }
 }
