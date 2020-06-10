@@ -6,8 +6,6 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Synthesizer;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,44 +44,32 @@ public class UploadPage {
      * initializes instance of UploadPage with features that the user can interact with
      */
     public UploadPage() {
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                App mainScreen = new App();
-                mainScreen.NewScreen();
-                frame.setVisible(false);
+        backButton.addActionListener(e -> {
+            App.NewScreen();
+            frame.setVisible(false);
+        });
+
+        getFileButton.addActionListener(e -> {
+            OpenFile of = new OpenFile();
+            try {
+                of.open();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+            // new input text
+            inputFile = of.file;
+
+            if (inputFile == null) {
+                problemMessage.setText("no file uploaded");
+            } else if (!checkFileValidity(inputFile)) {
+                problemMessage.setText("invalid file");
+            } else {
+                problemMessage.setText(inputFile.toString());
             }
         });
 
-        getFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OpenFile of = new OpenFile();
-                try {
-                    of.open();
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
-
-                // new input text
-                inputFile = of.file;
-
-                if (inputFile == null) {
-                    problemMessage.setText("no file uploaded");
-                } else if (!checkFileValidity(inputFile)) {
-                    problemMessage.setText("invalid file");
-                } else {
-                    problemMessage.setText(inputFile.toString());
-                }
-            }
-        });
-
-        playFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               PlayFile(inputFile);
-            }
-        });
+        playFileButton.addActionListener(e -> PlayFile(inputFile));
     }
 
     private boolean checkFileValidity(File file) {

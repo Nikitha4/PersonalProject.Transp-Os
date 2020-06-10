@@ -2,8 +2,6 @@ package com.example.transp_os;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * This class creates the screen for the TransposePage
@@ -37,23 +35,17 @@ public class TransposePage {
      * initializes instance of TransposePage with features that the user can interact with
      */
     public TransposePage() {
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                App.NewScreen();
-                frame.setVisible(false);
-            }
+        backButton.addActionListener(e -> {
+            App.NewScreen();
+            frame.setVisible(false);
         });
 
-        answerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TransposeNote findAnswer = new TransposeNote();
-                String answer = findAnswer.getNote(inputKey.getSelectedItem().toString(),
-                        outputKey.getSelectedItem().toString(), inputNote.getSelectedItem().toString());
+        answerButton.addActionListener(e -> {
+            TransposeNote findAnswer = new TransposeNote();
+            String answer = findAnswer.getNote(inputKey.getSelectedItem().toString(),
+                    outputKey.getSelectedItem().toString(), inputNote.getSelectedItem().toString());
 
-                outputNote.setText("New Note: " + answer);
-            }
+            outputNote.setText("New Note: " + answer);
         });
     }
 }
