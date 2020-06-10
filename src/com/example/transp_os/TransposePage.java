@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class creates the screen for the TransposePage
+ */
 public class TransposePage {
     private static JFrame frame;
     private JPanel Transpose;
@@ -14,10 +17,10 @@ public class TransposePage {
     private JComboBox outputKey;
     private JLabel outputNote;
     private JButton answerButton;
-    private JLabel instructionOne;
-    private JLabel instructionTwo;
-    private JLabel InstructionThree;
 
+    /**
+     * creates a new screen with starting attributes for dimension and visibility
+     */
     public static void NewScreen() {
         frame = new JFrame("Transp-Os");
         frame.setContentPane(new TransposePage().Transpose);
@@ -30,12 +33,14 @@ public class TransposePage {
         frame.setVisible(true);
     }
 
+    /**
+     * initializes instance of TransposePage with features that the user can interact with
+     */
     public TransposePage() {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                App mainScreen = new App();
-                mainScreen.NewScreen();
+                App.NewScreen();
                 frame.setVisible(false);
             }
         });
@@ -44,12 +49,11 @@ public class TransposePage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TransposeNote findAnswer = new TransposeNote();
-                String answer = findAnswer.getNote(inputKey.getSelectedItem().toString(), outputKey.getSelectedItem().toString(),
-                        inputNote.getSelectedItem().toString());
+                String answer = findAnswer.getNote(inputKey.getSelectedItem().toString(),
+                        outputKey.getSelectedItem().toString(), inputNote.getSelectedItem().toString());
 
                 outputNote.setText("New Note: " + answer);
             }
         });
-
     }
 }

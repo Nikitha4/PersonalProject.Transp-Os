@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="37435" class="javax.swing.JButton" binding="scales_button">
+      <component id="37435" class="javax.swing.JButton" binding="scalesButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -17,7 +17,7 @@
           <text value="scales"/>
         </properties>
       </component>
-      <component id="cd54" class="javax.swing.JButton" binding="upload_button">
+      <component id="cd54" class="javax.swing.JButton" binding="uploadButton">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -25,7 +25,7 @@
           <text value="upload music"/>
         </properties>
       </component>
-      <component id="a4a66" class="javax.swing.JButton" binding="transpose_button">
+      <component id="a4a66" class="javax.swing.JButton" binding="transposeButton">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

@@ -5,60 +5,62 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * App class calls the starting method and begins the application
+ */
 public class App {
-    private JButton scales_button;
+    private JButton scalesButton;
     private JPanel panelMain;
-    private JButton upload_button;
-    private JButton transpose_button;
+    private JButton uploadButton;
+    private JButton transposeButton;
     private JLabel title;
     private static JFrame frame;
 
+    /**
+     * initializes instance of App class with three buttons that can open different pages
+     */
     public App() {
-        scales_button.addActionListener(new ActionListener() {
+        scalesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ScalesPage second_screen = new ScalesPage();
-                second_screen.NewScreen();
-                frame.setVisible(false);
-            }
-        });
-        //scales_button.addActionListener(e -> JOptionPane.showMessageDialog(null, "hello"));
-
-        upload_button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UploadPage second_screen = new UploadPage();
-                second_screen.NewScreen();
+                ScalesPage.NewScreen();
+                // makes App.form gui not visible when ScalesPage is opened
                 frame.setVisible(false);
             }
         });
 
-        transpose_button.addActionListener(new ActionListener() {
+        uploadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TransposePage second_screen = new TransposePage();
-                second_screen.NewScreen();
+                UploadPage.NewScreen();
+                // makes App.form gui not visible when UploadPage is opened
+                frame.setVisible(false);
+            }
+        });
+
+        transposeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TransposePage.NewScreen();
+                // makes App.form gui not visible when TransposePage is opened
                 frame.setVisible(false);
             }
         });
 
     }
 
+    /**
+     * opens an App.form gui to start the application
+     * @param args parameter for main function
+     */
     public static void main(String[] args) {
         NewScreen();
-        /*frame = new JFrame("Transp-Os");
-        frame.setContentPane(new App().panelMain);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Dimension dimension = new Dimension();
-        dimension.height = 500;
-        dimension.width = 500;
-        frame.setMinimumSize(dimension);
-        frame.pack();
-        frame.setVisible(true);*/
     }
 
-    public static void NewScreen() {
+    /**
+     * creates a new screen with starting attributes for dimension and visibility
+     */
+    static void NewScreen() {
         frame = new JFrame("Transp-Os");
         frame.setContentPane(new App().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -13,6 +13,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+/**
+ * This class creates the screen for the UploadPage
+ */
 public class UploadPage {
 
     private static JFrame frame;
@@ -24,6 +27,9 @@ public class UploadPage {
     private JLabel problemMessage;
     private java.io.File inputFile;
 
+    /**
+     * creates a new screen with starting attributes for dimension and visibility
+     */
     public static void NewScreen() {
         frame = new JFrame("Transp-Os");
         frame.setContentPane(new UploadPage().Upload);
@@ -36,6 +42,9 @@ public class UploadPage {
         frame.setVisible(true);
     }
 
+    /**
+     * initializes instance of UploadPage with features that the user can interact with
+     */
     public UploadPage() {
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -77,15 +86,13 @@ public class UploadPage {
         });
     }
 
-    public boolean checkFileValidity(File file) {
-        System.out.println(file);
+    private boolean checkFileValidity(File file) {
         String fileString = file.toString();
         String[] fileArray = fileString.split("\\.");
-        System.out.println(fileArray[fileArray.length - 1]);
         return fileArray[fileArray.length - 1].equals("mid");
     }
 
-    public void PlayFile(File file) {
+    private void PlayFile(File file) {
         if (file != null && checkFileValidity(file)) {
             Synthesizer synthesizer = null;
             javax.sound.midi.Sequencer sequencer = null;
