@@ -14,6 +14,9 @@ public class TransposePage {
     private JComboBox inputNote;
     private JComboBox outputKey;
     private JLabel outputNote;
+    private JLabel instructionOne;
+    private JLabel instructionTwo;
+    private JLabel instructionThree;
     private JButton answerButton;
 
     /**
